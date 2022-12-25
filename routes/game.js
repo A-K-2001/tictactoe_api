@@ -21,7 +21,7 @@ router.post("/"  ,async (req,res)=>{
         const move = await newMove.save();
         // console.log(move);
 
-        res.status(200).json(savedgame);
+        res.status(201).json(savedgame);
 
     }catch(err){
         // console.log(err); 

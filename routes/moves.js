@@ -26,12 +26,13 @@ router.post("/" ,async (req,res)=>{
 router.put("/:id",async (req,res)=>{
    
     try{
-        console.log("yes");
+        // console.log("yes");
         const updatedMoves = await Moves.findByIdAndUpdate(req.params.id,{
             $set: req.body
         },{upsert: true,new:true}
         );
-        // console.log(updatedMoves);
+        // console.log(updatedMoves); 
+
 
         res.status(200).json(updatedMoves);
     }catch(err){
