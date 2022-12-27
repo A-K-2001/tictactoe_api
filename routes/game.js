@@ -49,7 +49,20 @@ router.get("/find/:id", async (req,res)=>{
     }catch(err){
         res.status(500).json(err)
     }
-})
+});
+
+router.get("/findm/:id",async (req,res)=>{
+    try{
+            const  game = await Game.findById(req.params.id);
+           
+            res.status(200).json(game);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+
+
 
 
 module.exports = router
